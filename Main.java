@@ -19,7 +19,7 @@ public class Main {
 		row=sc.nextInt();
 		col=sc.nextInt();}
 			else {
-				System.out.println("In Computer move ");
+				
 				int[] comMove=computerMove();
 				row=comMove[0]+1;
 				col=comMove[1]+1;
@@ -29,7 +29,9 @@ public class Main {
 		fillBoard(row-1,col-1);
 	
 		if(isWin(chance())) {
+			if(chance()=="X")
 			System.out.println("Hey You WOn "+chance());
+			else System.out.println("Hey You Lost X");
 			return;}
 		turn++;
 		
@@ -83,7 +85,7 @@ public class Main {
 	static int[] checkDiagnol() {	
 		
 		if(d1()==true&&d2()==true) {
-			System.out.println("In Diagnol move");	
+			
 		if(board[1][1]==board[2][2]&&board[1][1]!=" ")
 			return new int[] {0,0};
 		if(board[1][1]==board[0][0]&&board[1][1]!=" ")
